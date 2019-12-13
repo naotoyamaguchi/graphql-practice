@@ -28,7 +28,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLString } },
       resolve(parentValue, args) {
         // hit DB / external api; get data
-
+        return _.find(users, { id: args.id });
       }
     }
   }
